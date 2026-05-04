@@ -1,0 +1,6 @@
+{
+  "name": "AI Risk Compliance Assessor",
+  "description": "Upload AI models documentation to analyze and assess them according to regulations like NIST AI RMF, EU AI Act, UNESCO principles, and the Australian Government AI Impact Assessment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

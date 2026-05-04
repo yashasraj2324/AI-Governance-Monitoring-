@@ -1,0 +1,29 @@
+# Model Card for AcmeHealth Diagnostics AI
+
+## Model Details
+- **Developer:** AcmeHealth Inc.
+- **Model Version:** 1.0.0
+- **Model Type:** Deep Learning / Convolutional Neural Network (CNN)
+- **License:** Proprietary
+
+## Intended Use
+- **Primary Use Case:** Assisting radiologists in identifying general abnormalities in chest X-rays.
+- **Intended Audience:** Medical professionals and certified radiologists.
+- **Out-of-Scope:** Not intended to replace human doctors or to be used as a sole standalone diagnostic tool. It should not be used on patients under the age of 18.
+
+## Training Data
+- **Dataset:** 150,000 chest X-ray images, sourced from three internal US hospitals.
+- **Consent:** All data has been anonymized to HIPAA standards. However, explicit opt-in consent for AI training was not obtained for approximately 25% of the retrospective dataset collected prior to 2018.
+- **Demographics:** The training set predominantly reflects patients of European descent (70%), African descent (15%), Hispanic descent (10%), Asian descent (5%).
+
+## Performance, Fairness and Limitations
+- **Accuracy:** 93% overall accuracy on the internal validation set.
+- **Bias/Fairness Issues:** Independent audits showed the model has a 4% higher false-positive rate for female patients under 40, and a 5% higher false-negative rate for patients of Asian descent.
+- **Limitations:** Only works on standardized PA (Posteroanterior) chest view X-rays. Quality of X-ray significantly impacts accuracy.
+
+## Security, Privacy, and Oversight
+- **Data Protection:** All patient data inputs are encrypted in transit and at rest using AES-256.
+- **Data Retention & Telemetry:** User queries and image inputs are sent to AcmeHealth cloud servers and retained for 90 days by default to retrain and improve model accuracy. Users must explicitly navigate to settings to opt-out.
+- **Human-in-the-loop:** The system flags potential issues, but a human radiologist must make the final sign-off in the Electronic Health Record (EHR) system.
+- **Vulnerabilities:** The model is susceptible to adversarial noise attacks if an image is maliciously altered. No real-time anomaly detection for data poisoning is currently implemented in production.
+- **Explainability:** The model provides a heatmap of areas it focused on, but does not provide a textual rationale.
